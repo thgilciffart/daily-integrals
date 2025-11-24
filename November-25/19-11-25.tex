@@ -1,0 +1,42 @@
+\documentclass[12pt,a4paper]{extarticle}
+\usepackage{style}
+\usepackage{bigints}
+\usepackage[margin=0.5in]{geometry}
+\everymath{\displaystyle}
+
+\title{Daily Integral November 19 2025}
+\author{Jar Jar Binks}
+\begin{document}
+\maketitle
+
+\section{Easy Integral}
+\[
+\int_0^4\frac{\sqrt{4-x}}{\sqrt{x}} 
+\]
+\subsection{Solution}
+Consider the following u substitution:
+\begin{align*}
+    u&=\sqrt{4-x} \dif{x} \\ 
+    \dif{u}&=\frac{-1}{2\sqrt{4-x}} \dif{x} \\
+    \dif{x}&=-2\sqrt{4-x} \dif{x} \\
+    \dif{x}&=-2u \dif{u}
+\end{align*}
+and when $x=0$, $u=2$ and $x=4$, $u=0$. 
+Now sub this back into our original equation
+\begin{align*}
+    \int_0^4\frac{\sqrt{4-x}}{\sqrt{x}}dx&=\int^0_2\frac{\sqrt{4-x}(-2u)}{\sqrt{x}} \dif{u} 
+\end{align*}
+We can flip the bounds of the integration to make it nicer because we have a negative as well
+\begin{align*}
+    \int^0_2\frac{\sqrt{4-x}(-2u)}{\sqrt{x}} \dif{u} &=\int^2_0\frac{2u^2}{\sqrt{4-u^2}}\dif{u} \\
+        u&=2\sin\theta \\ 
+        \dif{u}&=2\cos\theta\dif{\theta} \\ 
+        u&=0,\theta=0 \\ u&=2,\theta=\frac{\pi}{2} \\
+        \int^2_0\frac{2u^2}{\sqrt{4-u^2}}\dif{u} &= \int_0^{\frac{\pi}{2}}\frac{16\sin^2\theta\cos\theta}{\sqrt{4-4\sin^2\theta}} \dif{\theta} \\
+        &=\int_0^{\frac{\pi}{2}}\frac{16\sin^2\theta\cos\theta}{2\cos{\theta}} \dif{\theta} \\
+        &=8\int_0^{\frac{\pi}{2}}\sin^2\theta \dif{\theta} \\
+        &=4\int_0^{\frac{\pi}{2}}1-\cos2\theta \dif{\theta} \\
+        &=4\Bigg[\theta-\frac{\sin2\theta}{2}\Bigg]_0^{\frac{\pi}{2}} \\
+        &=2\pi
+\end{align*}
+\end{document}

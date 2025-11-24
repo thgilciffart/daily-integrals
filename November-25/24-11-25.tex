@@ -1,0 +1,58 @@
+\documentclass{article}
+\usepackage{style}
+\usepackage[margin=0.5in]{geometry}
+
+\title{Daily Integral}
+\author{Jar Jar Binks}
+\begin{document}
+\maketitle
+\section{Easy}
+\begin{problem}
+    Evaluate the following 
+    \[
+      \int_0^1 x^2 \sqrt{1-x^2} \dd x 
+    \]
+\end{problem}
+Consider the u sub:
+\begin{align*}
+  x&=\sin u \\
+  \dd x&= \cos u \dd u \\
+\end{align*}
+When $x=0,u=0$ and $x=1,u=\frac{\pi}{2}$
+\begin{align*}
+  \int_0^1 x^2 \sqrt{1-x^2} \dd x &= \int_0^{\pi/2} \sin^2u\cos^2u \dd u \\
+  &= \int_0^{\pi/2} \frac{1}{4}(1-\cos 2u)(1+\cos 2u) \dd u \\
+  &= \frac{1}{4} \int_0^{\pi/2} 1-\cos^2 2u \dd u \\
+  &= \frac{1}{4} \int_0^{\pi/2} 1-\frac{1}{2}(1+\cos4u) \dd u \\
+  &= \frac{1}{8} \int_0^{\pi/2} 1-\cos 4u \dd u \\
+  &= \frac{1}{8} \Big[ u-\frac{\sin 4u}{4} \Big]_{0}^{\pi / 2} \\
+  &= \frac{\pi}{16}
+\end{align*}
+\newpage
+
+\section{Medium}
+\begin{problem}
+    Evaluate the following 
+    \[
+      \int_{\int_{-1/2}^{1/2}|x| \dd x}^{\int_{-1}^{0}\frac{1}{x^2+2x+2} \dd x} (5+6^x+7^2x) \dd x
+    \]
+\end{problem}
+Let us evaluate the top bound first:
+\begin{align*}
+  \int_{-1}^{0}\frac{1}{x^2+2x+2} \dd x &= \int_{-1}^{0}\frac{1}{(x+1)^2+1} \dd x 
+\end{align*}
+Use the following trigonometric substitution
+\begin{align*}
+x+1 &= \tan u \\
+  \dd x &= \sec^2 u \dd u \\
+\end{align*}
+When $x=0,u=\frac{\pi}{4}$ and $x=-1,u=0$
+\begin{align*}
+  \int_{-1}^{0}\frac{1}{(x+1)^2+1} \dd x &= \int_0^{\pi / 4 } \frac{\sec^2 u}{\tan^2 u + 1} \dd u \\
+  &= \int_0^{\pi / 4 } \frac{\sec^2 u}{\sec^2 u} \dd u \\
+  &= \int_0^{\pi / 4 } \dd u \\
+  &= [u]_0^{\pi / 4 } \\
+  &= \frac{\pi}{4}
+\end{align*}
+Now let us evaluate the lower bound:
+\end{document}
