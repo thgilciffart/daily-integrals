@@ -1,0 +1,99 @@
+\documentclass{article}
+\usepackage{style}
+\usepackage[margin=0.5in]{geometry}
+
+\title{Daily Integral}
+\author{Jar Jar Binks}
+\begin{document}
+\maketitle
+\section{Easy}
+\begin{problem}
+    Evaluate the following
+    \[
+      \int_{0}^{\pi / 2} \frac{\cos x }{2-\cos^2 x} \dd x
+    \]
+\end{problem}
+\begin{align*}
+\int_{0}^{\pi / 2} \frac{\cos x }{2-\cos^2 x} \dd x &= \int_{0}^{\pi / 2} \frac{\cos x }{2-(1-\sin^2)x} \dd x \\
+&= \int_{0}^{\pi / 2} \frac{\cos x }{1+\sin^2 x} \dd x \\
+\end{align*}
+Now we consider the u sub
+\begin{align*}
+	u&=\sin x \\
+	\dd u &= \cos x \ \dd x \\
+\end{align*}
+when $x=0,u=0$ and $x=\frac{\pi}{2},u=1$
+\begin{align*}
+	\int_{0}^{\pi / 2} \frac{\cos x }{1+\sin^2 x} \dd x &= \int_{0}^{1} \frac{\cos x }{1+\sin^2 x} \dd x \\
+	&= \int_{0}^{1} \frac{1}{1+u^2} \dd u
+\end{align*}
+Now consider the trig sub
+\begin{align*}
+u&= \tan \theta \\
+\dd u &= \sec^2 \theta \ \dd \theta \\
+\end{align*}
+when $u=0,\theta=0$, and $u=1,\theta=\frac{\pi}{4}$, thus our final integral is transformed
+\begin{align*}
+\int_{0}^{1} \frac{1}{1+u^2} \dd u &= \int_{0}^{\pi / 4 } \frac{\sec^2 \theta }{1+\tan^2 \theta} \dd \theta \\
+&= \int_{0}^{\pi / 4 } \frac{\sec^2 \theta }{\sec^2 \theta} \dd \theta \\
+&= \Big[ \theta \Big]_{0}^{\pi / 4 } \\
+&= \frac{\pi}{4}
+\end{align*}
+\newpage
+
+\section{Medium}
+\begin{problem}
+  Evaluate the following
+  \[
+  \int_{0}^{\pi / 4 } \frac{(x+1)\tan x }{(1+\tan^2 x )} \dd x
+  \]
+\end{problem}
+\begin{align*}
+\int_{0}^{\pi / 4 } \frac{(x+1)\tan x }{(1+\tan^2 x )} \dd x &= \int_{0}^{\pi / 4 } \frac{(x+1)\tan x }{1+\tan^2 x} \dd x \\
+&= \int_{0}^{\pi / 4 } \frac{(x+1)\tan x }{\sec^2 x} \dd x \\
+&= \int_{0}^{\pi / 4 } (x+1)\sin x \cos x \dd x \\
+&= \frac{1}{2}\int_{0}^{\pi / 4 } x\sin2x+\sin2x \dd x \\
+&= \frac{1}{2}\int_{0}^{\pi/4}\sin 2x \dd x + \frac{1}{2}\int_{0}^{\pi/4}x\sin 2x \dd x \\
+&= -\frac{1}{4} \Big[ \cos 2x \Big]_{0}^{\pi/4} + \frac{1}{2}\int_{0}^{\pi/4}x\sin 2x \dd x \\
+&= 0--\frac{1}{4}+ \frac{1}{2}\int_{0}^{\pi/4}x\sin 2x \dd x \\
+&= \frac{1}{4} + \frac{1}{2}\int_{0}^{\pi/4}x\sin 2x \dd x \\
+\end{align*}
+Now we use Integrations by Parts:
+\begin{equation}
+	\int_{a}^{b} uv^{\prime} \dd x = \Big[uv\Big]_{a}^{b}-\int_{a}^{b}u^{\prime}v \dd x
+\end{equation}
+Now we select $u=x$ and $v=-\frac{1}{2}\cos 2x$ such that $v'=\sin 2x$
+\begin{align*}
+\int_{0}^{\pi/4}x\sin 2x \dd x &= \Big[(x)(-\frac{1}{2}\cos 2x)\Big]_{0}^{\pi/4}+\int_{0}^{\pi/4}\frac{1}{2}\cos 2x \dd x \\
+&= \frac{\pi}{4}\cdot 0 - 0+ \Bigg[ \frac{\sin 2x}{4} \Bigg]_{0}^{\pi/4} \\
+&= \frac{1}{4}
+\end{align*}
+Thus we have the final result of:
+\begin{align*}
+\int_{0}^{\pi / 4 } \frac{(x+1)\tan x }{(1+\tan^2 x )} \dd x &=\frac{1}{4}+\frac{1}{2}\frac{1}{4} \\
+&= \frac{3}{8}
+\end{align*}
+\newpage
+\section{Hard}
+\begin{problem}
+    Evaluate the following
+    \[
+    \int_{0}^{1}\frac{\pi e^{i\pi x /2}}{e^{i\pi x}+2e^{i\pi x/2}+1} \dd x
+    \]
+\end{problem}
+\begin{align*}
+\int_{0}^{1}\frac{\pi e^{i\pi x /2}}{e^{i\pi x}+2e^{i\pi x/2}+1} \dd x &=\int_{0}^{1} \frac{\pi e^{i\pi x / 2}}{(1+e^{i\pi x /2})^2} \dd x
+\end{align*}
+Simplify the expresion
+\begin{align*}
+	u&=1+e^{i\pi x / 2} \\
+	\dd u &= \frac{i\pi}{2}e^{i\pi x / 2} \dd x \\
+	\dd x &= \frac{2}{(i\pi)e^{i\pi x / 2}} \dd u
+\end{align*}
+when $x=0,u=1+i$ and $x=0,u=2$
+\begin{align*}
+\int_{0}^{1} \frac{\pi e^{i\pi x / 2}}{(1+e^{i\pi x /2})^2} \dd x &= \int_{2}^{1+i} \frac{\pi e^{i\pi x / 2}}{(u)^2} \frac{2}{(i\pi)e^{i\pi x / 2}} \dd u \\
+&= \frac{2}{i}\int_{2}^{1+i} \frac{1}{u^2} \dd u \\
+&= -\frac{2}{i} \Bigg[ \frac{1}{u} \Bigg]_{2}^{2+i}
+\end{align*}
+\end{document}

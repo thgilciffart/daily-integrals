@@ -8,9 +8,9 @@
 \maketitle
 \section{Easy}
 \begin{problem}
-    Evaluate the following 
+    Evaluate the following
     \[
-      \int_0^1 x^2 \sqrt{1-x^2} \dd x 
+      \int_0^1 x^2 \sqrt{1-x^2} \dd x
     \]
 \end{problem}
 Consider the u sub:
@@ -32,14 +32,14 @@ When $x=0,u=0$ and $x=1,u=\frac{\pi}{2}$
 
 \section{Medium}
 \begin{problem}
-    Evaluate the following 
+    Evaluate the following
     \[
-      \int_{\int_{-1/2}^{1/2}|x| \dd x}^{\int_{-1}^{0}\frac{1}{x^2+2x+2} \dd x} (5+6^x+7^2x) \dd x
+      \int_{\int_{-1/2}^{1/2}|x| \dd x}^{\int_{-1}^{0}\frac{1}{x^2+2x+2} \dd x} (5+6^x+7^{2x}) \dd x
     \]
 \end{problem}
 Let us evaluate the top bound first:
 \begin{align*}
-  \int_{-1}^{0}\frac{1}{x^2+2x+2} \dd x &= \int_{-1}^{0}\frac{1}{(x+1)^2+1} \dd x 
+  \int_{-1}^{0}\frac{1}{x^2+2x+2} \dd x &= \int_{-1}^{0}\frac{1}{(x+1)^2+1} \dd x
 \end{align*}
 Use the following trigonometric substitution
 \begin{align*}
@@ -55,4 +55,18 @@ When $x=0,u=\frac{\pi}{4}$ and $x=-1,u=0$
   &= \frac{\pi}{4}
 \end{align*}
 Now let us evaluate the lower bound:
+\begin{align*}
+	\int_{-1/2}^{1/2} |x| \dd x
+\end{align*}
+By interpreting this geometrically as the area of 2 identical triangles with base $\frac{1}{2}$ and height $\frac{1}{2}$, we have:
+\begin{align*}
+	\int_{-1/2}^{1/2} |x| \dd x &= 2 \cdot \Big( \frac{1}{2} \Big) \cdot \Big( \frac{1}{2} \Big) \cdot \Big( \frac{1}{2} \Big) \\
+	&= \frac{1}{4}
+\end{align*}
+Thus we have the final integral of
+\begin{align*}
+\int_{\int_{-1/2}^{1/2}|x| \dd x}^{\int_{-1}^{0}\frac{1}{x^2+2x+2} \dd x} (5+6^x+7^2x) \dd x &= \int_{1/4}^{\pi / 4} 5+6^x+7^{2x} \dd x \\
+&= \Big[ 5x + \frac{6^x}{\ln 6} + \frac{7^{2x}}{2\ln7} \Big]_{1/4}^{\pi / 4} \\
+&\approx 8.86503611462
+\end{align*}
 \end{document}
