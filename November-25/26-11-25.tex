@@ -24,12 +24,29 @@
 Now we can transform the integral from
 \begin{align*}
 \int_0^{2}\frac{x^3}{x^2+4}\dd x &= 2\int_0^{\pi / 4 }\frac{8\tan^3 \theta \sec^2 \theta}{4\tan^2\theta+4}\dd \theta \\
-&=4int_{0}^{\pi / 4} \tan^3 \theta \dd \theta \\
+&=4\int_{0}^{\pi / 4} \tan^3 \theta \dd \theta \\
 &=4\int_{0}^{\pi / 4} \tan\theta (\sec^2\theta - 1 )\dd \theta \\
 &=4\int_{0}^{\pi / 4} \tan\theta\sec^2\theta - \tan\theta\dd \theta \\
 &=4\int_{0}^{\pi / 4} \tan\theta\frac{d[\tan\theta]}{\dd\theta} \dd\theta+ 4\int_0^{\pi/4}\frac{-\sin\theta}{\cos\theta}\dd \theta \\
 &=2\Big[ \tan^2\theta \Big]_0^{\pi / 4 } + 4 \Big[ \ln\cos\theta \Big]_0^{\pi / 4} \\
 &= 2+4\ln(\frac{1}{2})^{1/2} \\
 &= 2-\ln4
+\end{align*}
+\newpage
+\section{Hard}
+\begin{problem}
+    Evaluate the following
+    \[
+    \int_{1/4}^{1/2}\frac{1}{\sqrt{1-x^2} \arcsech x}\dd x
+    \]
+\end{problem}
+Let us make the sub $x=\sech \theta$
+\begin{align*}
+x&= \sech \theta \\
+\dd x &= \sech\theta \tanh\theta \dd\theta \\
+x&=\frac{1}{4} \\
+u&=\frac{1}{4} \\
+x&=\frac{1}{2} \\
+u&=\frac{1}{4} \\
 \end{align*}
 \end{document}
