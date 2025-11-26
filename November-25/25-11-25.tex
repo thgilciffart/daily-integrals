@@ -90,10 +90,12 @@ Simplify the expresion
 	\dd u &= \frac{i\pi}{2}e^{i\pi x / 2} \dd x \\
 	\dd x &= \frac{2}{(i\pi)e^{i\pi x / 2}} \dd u
 \end{align*}
-when $x=0,u=1+i$ and $x=0,u=2$
+when $x=0,u=2$ and $x=1,u=1+i$
 \begin{align*}
 \int_{0}^{1} \frac{\pi e^{i\pi x / 2}}{(1+e^{i\pi x /2})^2} \dd x &= \int_{2}^{1+i} \frac{\pi e^{i\pi x / 2}}{(u)^2} \frac{2}{(i\pi)e^{i\pi x / 2}} \dd u \\
 &= \frac{2}{i}\int_{2}^{1+i} \frac{1}{u^2} \dd u \\
-&= -\frac{2}{i} \Bigg[ \frac{1}{u} \Bigg]_{2}^{2+i}
+&= -\frac{2}{i} \Bigg[ \frac{1}{u} \Bigg]_{2}^{1+i} \\
+&= 1+i-i \\
+&= 1
 \end{align*}
 \end{document}
